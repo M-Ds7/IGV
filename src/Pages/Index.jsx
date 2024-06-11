@@ -1,8 +1,5 @@
 import HabitosEstudio from '../images/Habitos-de-Estudio.png'
 import Layout from "../components/Layout"
-import AcountAlumn from '../components/AcountAlumn'
-import FormPagos from '../components/FormPagos'
-
 
 const Index = () => {
   return (
@@ -22,8 +19,6 @@ const Index = () => {
             </div>
           </div>
         </div> 
-        {/* <AcountAlumn/> */}
-        {/* <FormPagos/> */}
       </Layout>
     </>
   )

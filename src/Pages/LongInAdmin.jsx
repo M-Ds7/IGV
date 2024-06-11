@@ -3,7 +3,7 @@ import LogIn from "../components/LogIn"
 
 
 
-const Admin = () => {
+const LogInAdmin = () => {
   return (
     <>
       <Layout>
@@ -13,4 +13,4 @@ const Admin = () => {
   )
 }
 
-export default Admin
+export default LogInAdmin

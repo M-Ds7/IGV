@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 
 const Navbar = () => {
-    const [isAdmin, setIsAdmin] = useState(true)
+    const [isAdmin, setIsAdmin] = useState(false)
 
     return (
         <>
@@ -23,7 +23,7 @@ const Navbar = () => {
                                     </NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink className="nav-link text-black" to="/admin">
+                                    <NavLink className="nav-link text-black" to="/login">
                                         Administrador
                                     </NavLink>
                                 </li>
