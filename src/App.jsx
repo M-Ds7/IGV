@@ -9,6 +9,7 @@ import AcountAlumn from './components/AcountAlumn'
 import FormPagos from './components/FormPagos'
 import FormModificar from './components/FormModificar'
 import Documentos from './components/Documentos'
+import { SistemaPagoProvider } from './components/Context/context'
 
 const AppRoutes = () => {
   let routes = useRoutes([
@@ -26,12 +27,16 @@ const AppRoutes = () => {
   return routes
 }
 
+
+
 function App() {
   return (
     <>
+    <SistemaPagoProvider>
       <BrowserRouter>
         <AppRoutes />
       </BrowserRouter>
+    </SistemaPagoProvider>
     </>
   )
 }

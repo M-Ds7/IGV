@@ -1,16 +1,30 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { SistemPagoCardContext } from './Context/context';
 
 const CardAlumn = () => {
+    const { token } = useContext(SistemPagoCardContext)
     const [alumnos, setAlumnos] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/api/v1/alumno')
-            .then(response => { setAlumnos(response.data) })
-            .catch(error => { console.error('Error al obtener alumnos:', error); })
-    }, [])
+        const fechData = async () => {
+            try {
+                const response = await axios.get('http://localhost:3000/api/v1/alumno',{
+                    headers:{
+                        'Authorization': `Bearer ${token}`
+                    }
+                })
+                setAlumnos(response.data)
+            } catch (error) {
+                console.error('Error al obtener alumno', error);
+            }
+        }
+        if (token) {
+            fechData()
+        }
+    }, [token])
     return (
         <>
             <div className="container">

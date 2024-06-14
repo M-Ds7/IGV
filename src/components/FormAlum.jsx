@@ -10,10 +10,11 @@ function FormAlum() {
   const [fechaNacimiento, setFechaNacimiento] = useState('')
   const [telefono, setTelefono] = useState('')
   const [direccion, setDireccion] = useState('')
+  const [curp, setCurp] = useState('')
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const alumnoData = { nombre, apellido, email, matricula, fechaNacimiento, telefono, direccion };
+    const alumnoData = { nombre, apellido, email, matricula, fechaNacimiento, telefono, direccion, curp };
 
     axios.post(' http://localhost:3000/api/v1/alumno', alumnoData)
       .then(response => {
@@ -101,8 +102,8 @@ function FormAlum() {
                   </div>
                 </div>
               </div>
-              {/* <div className="row mb-3">
-                <div className="col-md-6">
+              {/* <div className="row mb-3"> */}
+                {/* <div className="col-md-6">
                   <label htmlFor="inputSchooling" className="form-label">Escolaridad</label>
                   <div className="has-validation">
                     <input type="text" id="inputSchooling" className="form-control" placeholder="Escolaridad del alumno" required value={}/>
@@ -110,17 +111,17 @@ function FormAlum() {
                       Por favor, introduce la escolaridad del alumno
                     </div>
                   </div>
-                </div>
-                <div className="col-md-6">
+                </div> */}
+                <div className="mb-3">
                   <label htmlFor="inputCurp" className="form-label">Curp</label>
                   <div className="has-validation">
-                    <input type="text" id="inputCurp" className="form-control" placeholder="curp deñ alumno" required />
+                    <input type="text" id="inputCurp" className="form-control" placeholder="curp deñ alumno" required value={curp} onChange={(e) => setCurp(e.target.value)}/>
                     <div className="invalid-feedback">
                       Por favor, introduce la curp del alumno
                     </div>
                   </div>
                 </div>
-              </div> */}
+             {/*  </div> */}
               <div className="mb-3">
                 <label htmlFor="inputAddress" className="form-label">Domicilio</label>
                 <div className="has-validation">
